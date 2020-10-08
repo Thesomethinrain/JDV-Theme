@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+/* Masonry
+------------------------------------*/
+
+// MobilFirst
+
+.masonry-container, .masonry-container-full {
+  margin: 0 auto;
+  width: 100%;
+  article {
+    width: 100%;
+    border: 3px solid $coul-white;
+  }
+}
+
+/* Widescreen (e.g. 1400 et +) */
+@media only screen and (min-width: ($widescreen)+1px) {
+  .masonry-container-full {
+    article {
+      width: 25%;
+    }
+  }
+  .masonry-container {
+    width: ($widescreen)-115px; //(e.g. 1285px)
+    article {
+      width: ((($widescreen)-115px)- ($gutter-masonry * 3))/4;
+    }
+  }
+  /*
+  .article-2col {
+    width: ((($widescreen)-115px)- ($gutter-masonry))/2;
+    //width: 635px;
+  }
+
+  .grid-item--w2 {
+    width: ((($widescreen)-115px)- ($gutter-masonry))/2;
+    //width: 635px;
+  }
+  */
+}
+
+/* Screen (e.g. 1100px-1400px) */
+@media only screen and (min-width: $screen) and (max-width: $widescreen) {
+  .masonry-container-full {
+    .grid-1 {
+      width: 25%;
+    }
+    .grid-2 {
+      width: 50%;
+    }
+
+    .grid-3 {
+      width: 75%;
+    }
+  }
+  .masonry-container {
+    width: $screen; //(e.g. 1100px)
+    .grid-1 {
+      width: (($screen)- ($gutter-masonry * 3))/4;
+    }
+    .grid-2 {
+      width: (($screen)- ($gutter-masonry))/2;
+      //width: 472px;
+    }
+    .grid-3 {
+      width: ((($screen)- ($gutter-masonry * 2))/4) * 3 + $gutter-masonry;
+      //width: 635px;
+    }
+  }
+}
+/* Laptop (e.g. 960-1100px) */
+@media only screen and (min-width: $laptop) and (max-width: $screen) {
+  .masonry-container-full {
+    article {
+    }
+    .grid-1 {
+      width: 33.3334%;
+    }
+    .grid-2 {
+      width: 66.6667%;
+    }
+
+    .grid-3 {
+      width: 100%;
+    }
+  }
+  .masonry-container {
+    width: $laptop; //(e.g. 960px)
+    .grid-1 {
+      width: (($laptop)- ($gutter-masonry * 2))/3;
+    }
+    .grid-2 {
+      width: ((($laptop)- ($gutter-masonry))/3) * 2;
+      //width: 472px;
+    }
+
+    .grid-3 {
+      width: ((($laptop)- ($gutter-masonry * 2))/3) * 2 + $gutter-masonry;
+      //width: 635px;
+    }
+  }
+}
+/* Tablet - Landscape (e.g. 768-959px) */
+@media only screen and (min-width: $tablet) and (max-width: ($laptop)-1px) {
+  .masonry-container-full {
+    article {
+      width: 50%;
+    }
+  }
+  .masonry-container {
+    width: $tablet;
+    article {
+      width: (($tablet)- ($gutter-masonry))/2;
+    }
+  }
+
+  /*
+  .grid-item--w1,
+  .grid-item--w2,
+  .grid-item-2col {
+    width: (($tablet)- ($gutter-masonry))/2;
+    //width: (376px);
+  }
+  */
+}
+
+/* Tablet - Portrait (e.g. 480-767px) */
+@media only screen and (min-width: $phone) and (max-width: ($tablet)-1px) {
+  .masonry-container {
+    width: 90%;
+  }
+}
+
+/* Phone (e.g. 479px) */
+@media only screen and (max-width: ($phone)-1px) {
+}

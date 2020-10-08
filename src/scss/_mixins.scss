@@ -1,0 +1,209 @@
+@mixin justify($hyphens: auto) {
+  text-align: justify;
+  word-wrap: break-word;
+  -webkit-hyphens: $hyphens;
+  -moz-hyphens: $hyphens;
+  -ms-hyphens: $hyphens; // IE10+
+  -o-hyphens: $hyphens;
+  hyphens: $hyphens;
+}
+
+@mixin column {
+  columns: 1;
+  column-gap: 1em;
+  //column-rule: 1px solid $coul-2;
+  @include justify();
+  .break {
+    break-after: column;
+  }
+  .span-all {
+    column-span: all;
+  }
+}
+
+@mixin rounded($radius: 3px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin rotate($rotate) {
+  -webkit-transform: rotate($rotate);
+  -moz-transform: rotate($rotate);
+  -ms-transform: rotate($rotate);
+  -o-transform: rotate($rotate);
+}
+
+@mixin cover-image($image, $path-image: "../images/") {
+  min-height: 100vh;
+  background-image: url($path-image + $image);
+  background-position: 50% 50%;
+  background-size: cover;
+  text-align: center;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    //@include text-shadow();
+  }
+  color: $coul-white;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+@mixin bg-image($image, $path-image: "../images/") {
+  background-image: url($path-image + $image);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@mixin button() {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  @include rounded(0.3em);
+  @include button-padding-margin();
+  .btn-caption {
+    display: none;
+  }
+  &:hover {
+    .btn-icon {
+      display: none;
+    }
+    .btn-caption {
+      display: block;
+    }
+    //@include color(fade-out($coul-black, 0.8));
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    @include transition($vitesse: 0.1s, $effet: ease-out);
+  }
+}
+
+@mixin label($color: rgba($coul-black, 0.5)) {
+  border: thin solid;
+  //border: thin solid $color;
+  //color: $color;
+  //@include color($color);
+  display: inline;
+  text-decoration: none;
+  @include rounded(0.2em);
+  @include button-padding-margin();
+}
+
+@mixin shadow(
+  $x-pos: 0,
+  $y-pos: 0,
+  $distance: 6px,
+  $taille: 0px,
+  $couleur: rgba($coul-black, 0.6),
+  $inset: false
+) {
+  @if $inset {
+    -webkit-box-shadow: inset $x-pos $y-pos $distance $taille $couleur;
+    -moz-box-shadow: inset $x-pos $y-pos $distance $taille $couleur;
+    -o-box-shadow: inset $x-pos $y-pos $distance $taille $couleur;
+    box-shadow: inset $x-pos $y-pos $distance $taille $couleur;
+  } @else {
+    -webkit-box-shadow: $x-pos $y-pos $distance $taille $couleur;
+    -moz-box-shadow: $x-pos $y-pos $distance $taille $couleur;
+    -o-box-shadow: $x-pos $y-pos $distance $taille $couleur;
+    box-shadow: $x-pos $y-pos $distance $taille $couleur;
+  }
+}
+
+@mixin text-shadow(
+  $x-pos: 0,
+  $y-pos: 0,
+  $distance: 3px,
+  $couleur: rgba($coul-black, 0.6)
+) {
+  text-shadow: $x-pos $y-pos $distance $couleur;
+}
+
+@mixin color($bgcolor) {
+  background-color: $bgcolor;
+  header {
+    //background-color: adjust-hue($coul-1, -10%);
+  }
+  footer {
+    //background-color: adjust-hue($coul-1, -10%);
+  }
+  @if (lightness($bgcolor) >=50%) {
+    color: $coul-black;
+    a {
+      //color: fade-out($coul-black, 0.4);
+      &:hover {
+        //color: fade-out($coul-black, 0.1);
+      }
+    }
+    .button {
+      background-color: $coul-black;
+      color: $bgcolor;
+      &:hover {
+        background-color: fade-out($coul-black, 0.7);
+      }
+    }
+    &:hover {
+      //background-color: $coul-1;
+      //color: $coul-3;
+    }
+  } @else {
+    color: $coul-white;
+    a {
+      //color: fade-out($coul-white, 0.4);
+      &:hover {
+        //color: fade-out($coul-white, 0.1);
+      }
+    }
+    .button {
+      background-color: fade-out($coul-white, 0.4);
+      color: $bgcolor;
+      &:hover {
+        background-color: fade-out($coul-white, 0.7);
+      }
+    }
+  }
+}
+
+@mixin transition(
+  $propriete: all,
+  $vitesse: 500ms,
+  $effet: ease-out,
+  $delai: 80ms
+) {
+  -webkit-transition: $propriete $vitesse $effet $delai;
+  -moz-transition: $propriete $vitesse $effet $delai;
+  -o-transition: $propriete $vitesse $effet $delai;
+  transition: $propriete $vitesse $effet $delai;
+}
+
+@mixin grayEffect($graylevel) {
+  -webkit-filter: grayscale($graylevel); // Older webkit versions
+  -webkit-filter: unquote("grayscale($graylevel+'%')");
+  filter: grayscale;
+  filter: gray; // IE6-9
+}
+
+@mixin blurEffect($blurlevel) {
+  -webkit-filter: blur($blurlevel);
+  filter: blur($blurlevel);
+}
+
+@mixin hueRotateEffect($rotatelevel: -90deg) {
+  -webkit-filter: hue-rotate($rotatelevel);
+  filter: hue-rotate($rotatelevel);
+}
+
+@mixin invertEffect($invertlevel) {
+  -webkit-filter: invert($invertlevel);
+  filter: invert($invertlevel);
+}
+
+@mixin saturate($saturatelevel: 8) {
+  -webkit-filter: saturate($saturatelevel);
+  filter: saturate($saturatelevel);
+}

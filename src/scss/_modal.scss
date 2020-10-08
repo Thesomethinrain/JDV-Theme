@@ -1,0 +1,65 @@
+@mixin modal($width: 90vw, $height: 90vh, $padding: 6em) {
+  //@include container();
+  //width: container(80%);
+
+  width: 100vw;
+  //height: 100vh;
+  box-sizing: border-box;
+  display: none;
+  color: #fff;
+  //border: 1em solid $coul-dark;
+  padding: 4em 0.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  overflow: scroll;
+  @include color(rgba($coul-white, 1));
+  @include shadow();
+  text-align: left;
+
+  @media only screen and (min-width: $tablet) {
+    width: $width;
+    height: $height;
+    margin-left: 50%;
+    left: -($width/2);
+    padding: 4em $padding-md $padding-md $padding-md ;
+    position: fixed;
+    top: 50%; /* poussé de la moitié de hauteur du référent */
+    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+    @include color(rgba($coul-white, 0.7));
+  }
+  .modal {
+  }
+
+  .main-content {
+  }
+
+  .close_button {
+    color: #fff;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    transform: scale(1, 1);
+    @include transition($vitesse: 0.1s, $effet: ease-in-out);
+    &:hover {
+      transform: scale(1.3, 1.3);
+      @include transition($vitesse: 0.1s, $effet: ease-in-out);
+    }
+  }
+}
+
+.modal {
+  @include modal(80vw, 80vh, 5em);
+}
+.video {
+  .modal {
+    @include modal(80vw, auto, 5em);
+  }
+  cursor:pointer;
+}
+.calendrier {
+  .modal {
+    @include modal(50vw, 30vh, 3em);
+  }
+}

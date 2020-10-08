@@ -1,0 +1,40 @@
+// ImageBox
+
+// Pour les effets Hover, cf. _hover_effect.scss
+
+.imgbox {
+  position: relative;
+  overflow: hidden;
+  //height: 200px;
+  //cursor: pointer;
+  text-align: center;
+  //@include shadow();
+  box-sizing: border-box;
+
+  img {
+    position: relative;
+  }
+  .caption {
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    .content {
+      position: relative;
+      p {
+        @include justify();
+      }
+    }
+  }
+  .title {
+    z-index: 10;
+    position: absolute;
+    color: $coul-white;
+    width: 100%;
+    left: 0;
+    //bottom: 0;
+    top: 50%; /* poussé de la moitié de hauteur du référent */
+    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+  }
+}

@@ -1,0 +1,54 @@
+// BOX
+
+// Pour les effets Hover, cf. _hover_effect.scss
+
+.box,
+.flatbox {
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  header {
+    //@include color(rgba($coul-1, 0.8));
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      text-transform: uppercase;
+      text-align: left;
+    }
+  }
+  main,
+  .inner {
+  }
+  footer {
+    //@include color($coul-1);
+    border-top: 1px solid rgba($coul-white, 0.3);
+    height: auto;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      text-align: left;
+    }
+  }
+}
+.box {
+  //@include shadow();
+}
+
+.flatbox {
+  //border: solid rgba($coul-black, 0.5) thin;
+  header {
+    //border-bottom: solid rgba($coul-black, 0.5) thin;
+  }
+  footer {
+    //border-top: solid rgba($coul-black, 0.5) thin;
+  }
+}

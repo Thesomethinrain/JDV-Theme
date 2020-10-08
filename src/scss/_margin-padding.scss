@@ -1,0 +1,167 @@
+.box,
+.flatbox,
+.timeline-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+}
+
+// Row
+
+.row {
+  margin: $margin-md 0;
+}
+
+// Inner
+
+.inner {
+  padding: $padding-l;
+}
+
+.inner-s {
+  padding: $padding-s;
+}
+
+.inner-sm {
+  padding: $padding-sm;
+}
+
+.inner-md {
+  padding: $padding-md;
+}
+
+.inner-l {
+  padding: $padding-l;
+}
+
+// Article
+
+article {
+  margin-top: 0;
+  margin-bottom: 0; //$margin-md; // cf Masonry gutter params in js file
+}
+
+// Box
+
+.box,
+.flatbox {
+  //padding: $padding-s;
+  header {
+    padding: $padding-sm;
+  }
+  main,
+  .inner {
+    padding: $padding-md;
+  }
+  footer {
+    padding-left: $padding-sm;
+  }
+}
+
+// ImgBox
+
+.imgbox {
+  padding: 0;
+  main,
+  .inner {
+    padding: $padding-md;
+  }
+  .caption {
+    padding: $padding-md;
+  }
+}
+
+// Timeline
+
+.timeline-content {
+  padding: $padding-s;
+}
+
+// Button
+
+@mixin button-padding-margin {
+  padding: $padding-s $padding-sm 0 $padding-sm;
+  margin: 0 $margin-s 0 0;
+}
+
+// Header
+
+#header > h1 {
+  line-height: $head-height;
+  margin-top: 0;
+}
+
+// Single
+
+.singlebox {
+  aside {
+    padding-top: 5em;
+  }
+}
+
+// Aside/-Content
+
+.widget {
+  padding-bottom: $padding-l;
+
+  li:first-child {
+    //padding-bottom: $padding-md;
+  }
+
+  li + li > h6,
+  li + li > .label {
+  }
+}
+
+#info {
+  padding-top: $padding-md;
+}
+
+.last {
+  //padding-left: $padding-md;
+}
+
+// Footer
+
+#footer {
+  padding-top: $padding-l;
+}
+
+// Text
+
+p {
+  margin-top: $body-margin-top; //0;
+  margin-bottom: $body-margin-bottom; //0;
+}
+.lead {
+  margin-bottom: $body-margin-bottom * 2; //0;
+}
+
+// Blockquote
+blockquote {
+  margin-top: $margin-md;
+  margin-bottom: $margin-l;
+  margin-left: $margin-sm;
+  padding-left: $padding-s;
+}
+
+// Helpers
+
+.ml-s {
+  margin-left: $margin-s;
+}
+.ml-sm {
+  margin-left: $margin-sm;
+}
+.ml-md {
+  margin-left: $margin-md;
+}
+.ml-l {
+  margin-left: $margin-l;
+}

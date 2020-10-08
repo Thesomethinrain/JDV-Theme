@@ -1,0 +1,123 @@
+// Colors vars
+
+$coul-1: #f1d012; //rgb(255, 208, 0); //rgb(121, 90, 61);
+$coul-2: #f1d012; //complement($coul-1); //invert(coul-1);//adjust-hue($coul-1, 15%);
+$coul-3: #5a2d13; //invert($coul-1); //adjust-hue($coul-1, 30%); //rgb(121, 90, 61);
+
+$coul-dark: darken($coul-2, 20%);
+$coul-black: #000;
+$coul-white: #fff;
+
+// Type vars
+
+@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kreon:300,400,500,600,700|Montserrat+Alternates:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt:100,200,300,400,500,600,700,800,900|Work+Sans:100,200,300,400,500,600,700,800,900&display=swap");
+
+//font-family: 'Kreon', serif;
+//font-family: 'Montserrat Alternates', sans-serif;
+//font-family: 'Rokkitt', serif;
+//font-family: 'Work Sans', sans-serif;
+
+//$font-title: 'Roboto Slab', serif;
+
+$font-title: "Rokkitt", sans-serif; //'Montserrat Alternates', sans-serif;
+$weight-title: 700; //900;
+$style-title: normal; //italic;
+
+$font-body: "Montserrat Alternates", sans-serif; //'Raleway', sans-serif;
+$weight-body: 200;
+$style-body: normal;
+
+$font-nav: "Rokkitt", sans-serif;
+$weight-nav: 700;
+$style-nav: normal;
+
+$font-button: "Rokkitt", sans-serif;
+$weight-button: 700;
+$style-button: normal;
+
+// Vertical rythm
+
+$body-font-size: 1em;
+
+$h1-font-size: 4rem;
+$h1-line-height: 1.2;
+$h1-letter-spacing: -0.1rem;
+
+$h2-font-size: 3.6rem;
+$h2-line-height: 1.25;
+$h2-letter-spacing: -0.1rem;
+
+$h3-font-size: 3rem;
+$h3-line-height: 1.3;
+$h3-letter-spacing: -0.1rem;
+
+$h4-font-size: 2.4rem;
+$h4-line-height: 1.35;
+$h4-letter-spacing: -0.08rem;
+
+$h5-font-size: 1.8rem;
+$h5-line-height: 1.5;
+$h5-letter-spacing: -0.05rem;
+
+$h6-font-size: 1.3rem;
+$h6-line-height: 1.6;
+$h6-letter-spacing: 0;
+
+// Margin-Padding
+
+$heading-margin-top: 0;
+$heading-margin-bottom: 1rem;
+
+$body-margin-top: 0;
+$body-margin-bottom: 1.5rem;
+
+$margin-s: 0.33em;
+$margin-sm: 0.5em;
+$margin-md: 1em;
+$margin-l: 2em;
+
+$padding-s: 0.33em;
+$padding-sm: 0.5em;
+$padding-md: 1em;
+$padding-l: 2em;
+
+// Header vars
+$head-height: 100px;
+$head-height-landing: 400px;
+$head-height-full: 400px; //100vh for laptop and more
+
+// Nav
+$haut-button: 48px;
+$nb-menu: 6;
+
+// Breakpoints
+
+$phone: 480px;
+$tablet: 767px;
+$laptop: 960px;
+$screen: 1100px;
+$widescreen: 1400px;
+
+// Grid vars
+$gutter-suzy: 15px;
+$gutter-masonry: 0;
+
+// Margin vars
+$mg-lg: 3em;
+$mg-md: $mg-lg/2;
+$mg-sm: $mg-lg/3;
+$mg-xs: $mg-lg/6;
+
+// Padding vars
+$pd-lg: 3em;
+$pd-md: $mg-lg/2;
+$pd-sm: $mg-lg/3;
+$pd-xs: $mg-lg/6;
+
+// Gutter vars
+$gt-lg: 3em;
+$gt-md: $mg-lg/2;
+$gt-sm: $mg-lg/3;
+$gt-xs: $mg-lg/6;

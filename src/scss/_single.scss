@@ -1,0 +1,61 @@
+#single-header-full {
+  //@include bg-image("datas/38-blindsuns.jpg");
+  //background-color: red;
+  height: $head-height-full;
+  overflow: hidden;
+  text-align: center;
+}
+#single-header-landing {
+  //@include bg-image("datas/38-blindsuns.jpg");
+  //background-color: red;
+  height: $head-height-landing;
+  overflow: hidden;
+  text-align: center;
+  div {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    width: 100vw;
+    margin: O auto;
+    h1 {
+      color: $coul-white;
+      line-height: $head-height-landing;
+      @include text-shadow();
+    }
+  }
+}
+
+.singlebox {
+  @include justify();
+  aside {
+    font-size: 0.8em;
+  }
+}
+
+@media (min-width: $laptop) {
+  #single-header-full {
+    height: 100vh;
+    text-align: center;
+    h1 {
+      line-height: 100vh;
+      @include text-shadow();
+    }
+  }
+  .singlebox {
+    @include color(rgba($coul-1, 0.7));
+    overflow: auto;
+    position: absolute;
+    margin: 0 auto;
+    width: 960px;
+    height: 80%;
+    margin-left: 50%;
+    left: -480px;
+    top: 50%; /* poussé de la moitié de hauteur du référent */
+    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+
+    aside {
+      font-size: 0.8em;
+      padding-left: $padding-l;
+    }
+  }
+}
